@@ -30,6 +30,9 @@ class BasePAN17():
             print("    Done\nPreprocessing text...")
 
             preprocessed   = [preprocess_tweet(instance['text']) for instance in self.data]
+            
+        else:
+            preprocessed   = [instance['text'] for instance in self.data]
         
         print("    Done\nTokenizing...")
         
