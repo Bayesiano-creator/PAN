@@ -10,7 +10,7 @@ def train_model_with_adapters(model, dataset_dict, epochs, batch_size, no_gpus, 
 
         training_args = TrainingArguments(
             learning_rate               = learning_rate,
-            num_train_epochs            = epochs,
+            num_train_epochs            = epochs[task_name],
             per_device_train_batch_size = batch_size,
             per_device_eval_batch_size  = batch_size,
             logging_steps               = logging_steps ,
@@ -35,7 +35,7 @@ def train_models(models, dataset_dict, epochs, batch_size, no_gpus, output_dir, 
 
         training_args = TrainingArguments(
             learning_rate               = learning_rate,
-            num_train_epochs            = epochs,
+            num_train_epochs            = epochs[task_name],
             per_device_train_batch_size = batch_size,
             per_device_eval_batch_size  = batch_size,
             logging_steps               = logging_steps,
@@ -68,7 +68,7 @@ def train_model_with_heads(model, dataset_dict, epochs, batch_size, no_gpus, out
 
         training_args = TrainingArguments(
             learning_rate               = learning_rate,
-            num_train_epochs            = epochs,
+            num_train_epochs            = epochs[task_name],
             per_device_train_batch_size = batch_size,
             per_device_eval_batch_size  = batch_size,
             logging_steps               = logging_steps ,
