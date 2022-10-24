@@ -15,6 +15,7 @@ def train_model_with_adapters(model, dataset_dict, epochs, batch_size, no_gpus, 
             per_device_eval_batch_size  = batch_size,
             logging_steps               = logging_steps ,
             output_dir                  = output_dir + '/' + task_name,
+            save_total_limit            = 5,
             overwrite_output_dir        = True,
             remove_unused_columns       = False,
         )
@@ -40,6 +41,7 @@ def train_models(models, dataset_dict, epochs, batch_size, no_gpus, output_dir, 
             per_device_eval_batch_size  = batch_size,
             logging_steps               = logging_steps,
             output_dir                  = output_dir + '/' + task_name,
+            save_total_limit            = 5,
             overwrite_output_dir        = True,
             remove_unused_columns       = False,
         )
@@ -73,6 +75,7 @@ def train_model_with_heads(model, dataset_dict, epochs, batch_size, no_gpus, out
             per_device_eval_batch_size  = batch_size,
             logging_steps               = logging_steps ,
             output_dir                  = output_dir + '/' + task_name,
+            save_total_limit            = 5,
             overwrite_output_dir        = True,
             remove_unused_columns       = False,
         )

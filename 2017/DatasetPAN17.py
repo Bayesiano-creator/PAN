@@ -9,7 +9,7 @@ from torch.utils.data import Dataset
 
 class BasePAN17():
     
-    def __init__(self, Dir, split, language, tokenizer, gender_dict, variety_dict, tweet_batch_size, max_seq_len):
+    def __init__(self, Dir, split, language, tokenizer, gender_dict, variety_dict, tweet_batch_size, max_seq_len, preprocess_text):
         self.Dir          = Dir
         self.split        = split
         self.language     = language
@@ -26,7 +26,7 @@ class BasePAN17():
         
         shuffle(self.data)
         
-        if language == 'es':
+        if preprocess_text:
             print("    Done\nPreprocessing text...")
 
             preprocessed   = [preprocess_tweet(instance['text']) for instance in self.data]
